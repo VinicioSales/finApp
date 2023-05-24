@@ -1,5 +1,12 @@
 import { StyleSheet } from 'react-native'
 
+//NOTE - headerStyles
+export const headerStyles = StyleSheet.create({
+    headerConteiner: {
+        backgroundColor: '#202639',
+    }
+})
+
 //NOTE - homeStyles
 export const homeStyles = StyleSheet.create({
     safeAreaView: {
@@ -9,10 +16,10 @@ export const homeStyles = StyleSheet.create({
     conteiner_inputs: {
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 10
+        marginTop: 10,
     },
     text_inputs: {
-        textAlign: 'center',
+        color: '#fff'
     },
     input: {
         width: 200,
@@ -21,13 +28,15 @@ export const homeStyles = StyleSheet.create({
         borderColor: 'gray',
         borderRadius: 5,
         padding: 10,
+        color: '#fff'
     },
     registrarButton: {
         elevation: 8,
         backgroundColor: '#009688',
         borderRadius: 10,
-        paddingVertical: 10,
-        paddingHorizontal: 12
+        paddingVertical: 5,
+        paddingHorizontal: 50,
+        marginTop: 20
     },
     registrarButtonText: {
         fontSize: 18,

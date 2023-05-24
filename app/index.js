@@ -4,15 +4,14 @@ import {
     Text,
     SafeAreaView,
     TextInput,
-    TouchableOpacity,
-    TouchableWithoutFeedback,
-    ScrollView } from "react-native";
-import { homeStyles, footerStyles } from '../styles/home_styles';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+    TouchableOpacity,} from "react-native";
+import { Stack, useRouter } from 'expo-router'
 import {
-    useInputValue,
-    dismissDatePickerModal
-} from '../hooks/home_hooks';
+    homeStyles,
+    footerStyles,
+    headerStyles } from '../styles/home_styles';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import { useInputValue } from '../hooks/home_hooks';
 
 const Home = () => {
     const inputValue = useInputValue();
@@ -26,30 +25,34 @@ const Home = () => {
 
     return (
         <SafeAreaView style={homeStyles.safeAreaView}>
+            <Stack.Screen
+                options={{
+                    headerStyle: headerStyles.headerConteiner,
+                    headerTitle: '',
+                    headerShadowVisible: false,
+                }}
+            />
             <View style={homeStyles.conteiner_inputs}>
                 <View style={homeStyles.conteiner_inputs}>
-                <Text>Valor</Text>
-                <TextInput
-                    style={homeStyles.input}
-                    placeholder="asasssa"
-                    onChangeText={inputValue.onChange}
-                    value={inputValue.value}
-                />
+                    <TextInput
+                        style={homeStyles.input}
+                        placeholder="Valor"
+                        onChangeText={inputValue.onChange}
+                        value={inputValue.value}
+                    />
                 </View>
                 <View style={homeStyles.conteiner_inputs}>
-                <Text>Descrição</Text>
-                <TextInput
-                    style={homeStyles.input}
-                    placeholder="asasssa"
-                    onChangeText={inputDescription.onChange}
-                    value={inputDescription.value}
-                />
+                    <TextInput
+                        style={homeStyles.input}
+                        placeholder="Descrição"
+                        onChangeText={inputDescription.onChange}
+                        value={inputDescription.value}
+                    />
                 </View>
                 <View style={homeStyles.conteiner_inputs}>
-                <Text>Data</Text>
                 <TextInput
                     style={homeStyles.input}
-                    placeholder="asasssa"
+                    placeholder="Data"
                     onChangeText={inputDescription.onChange}
                     value={inputDescription.value}
                 />
