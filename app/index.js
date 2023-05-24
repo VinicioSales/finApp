@@ -7,7 +7,7 @@ import {
     TouchableOpacity,
     TouchableWithoutFeedback,
     ScrollView } from "react-native";
-import { homeStyles as homeStyles } from '../styles/home_styles';
+import { homeStyles, footerStyles } from '../styles/home_styles';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {
     useInputValue,
@@ -17,17 +17,15 @@ import {
 const Home = () => {
     const inputValue = useInputValue();
     const inputDescription = useInputValue();
-    const menu = ['Home', 'Notes', 'Wallet']
     const menuItems = [
         { label: 'Início', icon: 'home' },
-        { label: 'Pagamentos', icon: 'attach-money' },
-        { label: 'Transferências', icon: 'compare-arrows' },
-        { label: 'Investimentos', icon: 'trending-up' },
+        { label: 'Carteira', icon: 'attach-money' },
+        { label: 'Economia', icon: 'trending-up' },
         { label: 'Configurações', icon: 'settings' },
     ];
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={homeStyles.safeAreaView}>
             <View style={homeStyles.conteiner_inputs}>
                 <View style={homeStyles.conteiner_inputs}>
                 <Text>Valor</Text>
@@ -61,14 +59,17 @@ const Home = () => {
                 </TouchableOpacity>
             </View>
             
-            <View style={homeStyles.footerConteiner}>
-                {menuItems.map((item, index) => (
-                    <TouchableOpacity key={index} style={homeStyles.menuItem}>
-                    <Icon name={item.icon} size={24} color="#FFF" />
-                    <Text style={homeStyles.menuItemLabel}>{item.label}</Text>
-                    </TouchableOpacity>
-                ))}
+            <View style={footerStyles.footerConteiner}>
+                <View style={footerStyles.footer}>
+                    {menuItems.map((item, index) => (
+                        <TouchableOpacity key={index} style={footerStyles.menuItem}>
+                            <Icon name={item.icon} size={24} color="#FFF" />
+                            <Text style={footerStyles.menuItemLabel}>{item.label}</Text>
+                        </TouchableOpacity>
+                    ))}
+                </View>
             </View>
+
         </SafeAreaView>
     );
 };

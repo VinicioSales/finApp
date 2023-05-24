@@ -1,6 +1,11 @@
 import { StyleSheet } from 'react-native'
 
+//NOTE - homeStyles
 export const homeStyles = StyleSheet.create({
+    safeAreaView: {
+        flex: 1,
+        backgroundColor: '#202639',
+    },
     conteiner_inputs: {
         justifyContent: 'center',
         alignItems: 'center',
@@ -31,21 +36,18 @@ export const homeStyles = StyleSheet.create({
         alignSelf: 'center',
         textTransform: 'uppercase'
     },
-    menuConteiner: {
-        paddingHorizontal: 10
-    },
-    menu: {
-        paddingHorizontal: 10,
-        paddingVertical: 5,
-        margingRight: 10,
-        backgroundColor: '#e0e0e0',
-        borderRadios: 5
-    },
-    menuText: {
-        fontSize: 16
-    },
+    
+});
+
+//NOTE - footerStyles
+export const footerStyles = StyleSheet.create({
     footerConteiner: {
-        backgroundColor: '#8B10AE',
+        position: 'absolute',
+        bottom: 30,
+        left: 0,
+        right: 0,
+    },
+    footer: {
         flexDirection: 'row',
         justifyContent: 'space-around',
         paddingVertical: 10,
@@ -55,6 +57,7 @@ export const homeStyles = StyleSheet.create({
     },
     menuItemLabel: {
         color: '#FFF',
-        marginTop: 5
+        marginTop: 5,
+        fontSize: 10
     }
-});
+})
