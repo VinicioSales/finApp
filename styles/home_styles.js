@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-export const styles = StyleSheet.create({
+export const homeStyles = StyleSheet.create({
     conteiner_inputs: {
         justifyContent: 'center',
         alignItems: 'center',
@@ -30,5 +30,31 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         alignSelf: 'center',
         textTransform: 'uppercase'
+    },
+    menuConteiner: {
+        paddingHorizontal: 10
+    },
+    menu: {
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        margingRight: 10,
+        backgroundColor: '#e0e0e0',
+        borderRadios: 5
+    },
+    menuText: {
+        fontSize: 16
+    },
+    footerConteiner: {
+        backgroundColor: '#8B10AE',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        paddingVertical: 10,
+    },
+    menuItem: {
+        alignItems: 'center',
+    },
+    menuItemLabel: {
+        color: '#FFF',
+        marginTop: 5
     }
 });
