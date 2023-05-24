@@ -1,6 +1,14 @@
 import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
+    conteiner_inputs: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 10
+    },
+    text_inputs: {
+        textAlign: 'center',
+    },
     input: {
         width: 200,
         height: 40,

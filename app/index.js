@@ -26,42 +26,44 @@ const Home = () => {
     return (
         <TouchableWithoutFeedback onPress={dismissDatePickerModal} accessible={false}>
         <SafeAreaView>
-            <View>
-            <Text>Valor</Text>
-            <TextInput
-                style={styles.input}
-                placeholder="asasssa"
-                onChangeText={inputValue.onChange}
-                value={inputValue.value}
-            />
-            </View>
-            <View>
-            <Text>Descrição</Text>
-            <TextInput
-                style={styles.input}
-                placeholder="asasssa"
-                onChangeText={inputDescription.onChange}
-                value={inputDescription.value}
-            />
-            </View>
-            <View>
-            <Text>Data</Text>
-            <TouchableOpacity onPress={showDatePickerModal}>
-                <Text>{dateProps.selectedDate.toLocaleDateString()}</Text>
-            </TouchableOpacity>
-            {dateProps.showDatePicker && (
-                <DateTimePicker
-                value={dateProps.selectedDate}
-                mode="date"
-                display="default"
-                onChange={dateProps.handleDateChange}
+            <View style={styles.conteiner_inputs}>
+                <View style={styles.conteiner_inputs}>
+                <Text>Valor</Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder="asasssa"
+                    onChangeText={inputValue.onChange}
+                    value={inputValue.value}
                 />
-            )}
-            </View>
-            <View>
-                <TouchableOpacity style={styles.registrarButton}>
-                    <Text style={styles.registrarButtonText}>Registrar</Text>
+                </View>
+                <View style={styles.conteiner_inputs}>
+                <Text>Descrição</Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder="asasssa"
+                    onChangeText={inputDescription.onChange}
+                    value={inputDescription.value}
+                />
+                </View>
+                <View style={styles.conteiner_inputs}>
+                <Text>Data</Text>
+                <TouchableOpacity onPress={showDatePickerModal}>
+                    <Text>{dateProps.selectedDate.toLocaleDateString()}</Text>
                 </TouchableOpacity>
+                {dateProps.showDatePicker && (
+                    <DateTimePicker
+                    value={dateProps.selectedDate}
+                    mode="date"
+                    display="default"
+                    onChange={dateProps.handleDateChange}
+                    />
+                )}
+                </View>
+                <View>
+                    <TouchableOpacity style={styles.registrarButton}>
+                        <Text style={styles.registrarButtonText}>Registrar</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         </SafeAreaView>
         </TouchableWithoutFeedback>
