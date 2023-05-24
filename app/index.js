@@ -5,13 +5,15 @@ import {
     SafeAreaView,
     TextInput,
     TouchableOpacity,} from "react-native";
-import { Stack, useRouter } from 'expo-router'
+import { Stack, useRouter } from 'expo-router';
 import {
     homeStyles,
     footerStyles,
     headerStyles } from '../styles/home_styles';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { useInputValue } from '../hooks/home_hooks';
+import { ScreenHeaderBtn } from '../components/screenHeaderBtn/ScreenHeaderBtn';
+import { icons } from '../constants/icons.js'
 
 const Home = () => {
     const inputValue = useInputValue();
@@ -30,6 +32,9 @@ const Home = () => {
                     headerStyle: headerStyles.headerConteiner,
                     headerTitle: '',
                     headerShadowVisible: false,
+                    headerLeft: () => (
+                        <ScreenHeaderBtn iconUrl={icons} dimension='60%'/>
+                    )
                 }}
             />
             <View style={homeStyles.conteiner_inputs}>
