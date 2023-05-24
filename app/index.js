@@ -7,21 +7,14 @@ import {
     TouchableOpacity,
     TouchableWithoutFeedback } from "react-native";
 import { styles } from '../styles/home_styles';
-import DateTimePicker from '@react-native-community/datetimepicker';
 import {
     useInputValue,
-    useDate,
-    handleInputValueChange,
-    handleInputDescriptionChange,
-    handleDateChange,
-    showDatePickerModal,
     dismissDatePickerModal
 } from '../hooks/home_hooks';
 
 const Home = () => {
     const inputValue = useInputValue();
     const inputDescription = useInputValue();
-    const dateProps = useDate(new Date());
 
     return (
         <TouchableWithoutFeedback onPress={dismissDatePickerModal} accessible={false}>
@@ -47,17 +40,6 @@ const Home = () => {
                 </View>
                 <View style={styles.conteiner_inputs}>
                 <Text>Data</Text>
-                <TouchableOpacity onPress={showDatePickerModal}>
-                    <Text>{dateProps.selectedDate.toLocaleDateString()}</Text>
-                </TouchableOpacity>
-                {dateProps.showDatePicker && (
-                    <DateTimePicker
-                    value={dateProps.selectedDate}
-                    mode="date"
-                    display="default"
-                    onChange={dateProps.handleDateChange}
-                    />
-                )}
                 </View>
                 <View>
                     <TouchableOpacity style={styles.registrarButton}>
